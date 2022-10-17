@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<math.h>
+int rev(int d)
+{
+    int r,s=0;
+    while(d!=0)
+    {
+        r=d%10;
+        s=s*10+r;
+        d=d/10;
+    }
+    return s;
+}
+int main()
+{
+    int n,k;
+    scanf("%d%d",&n,&k);
+    int r,s=0,p=n,i=0;
+    while(i!=k)
+    {
+        r=n%10;
+        s=s*10+r;
+        n=n/10;
+        i++;
+    }
+    int o=rev(p),h=0;
+    i=0;
+    while(i!=k)
+    {
+        r=o%10;
+        h=h*10+r;
+        o=o/10;
+        i++;
+    }
+    printf("%d",abs(rev(s)-h));
+    return 0;
+    
+}
