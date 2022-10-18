@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+    char s[100],d[100];
+    scanf("%[^\n]s",s);
+    int i,p=0;
+    for(i=0;s[i]!='\0';i++)
+    {
+        if(s[i]!='a' && s[i]!='e'&&s[i]!='i'&&s[i]!='o'&&s[i]!='u')
+        {
+            if(p==0)
+            {
+                d[p++]='C';
+            }
+            if(d[p-1]!='C')
+            {
+            d[p++]='C';
+            }
+            
+        }
+        else 
+        {
+            if(p==0)
+            {
+                d[p]='V';
+                p++;
+            }
+            if(d[p-1]!='V')
+            {
+            d[p]='V';
+            p++;
+            }
+        }
+    }
+    printf("%s",d);
+}
