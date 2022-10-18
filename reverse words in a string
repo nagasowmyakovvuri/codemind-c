@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+    char s[100],l[100];
+    scanf("%[^\n]s",s);
+    int u=0,o,i;
+    for (i=0;s[i]!='\0';i++)
+    {
+        if(s[i]!=' ')
+        {
+            l[u++]=s[i];
+        }
+        else
+        {
+            for(o=u-1;o>=0;o--)
+            {
+                printf("%c",l[o]);
+                if(o==0)
+                printf(" ");
+            }
+            
+            u=0;
+            //i++;
+            
+        }
+    }
+    int y=0,j;
+    for(j=0;s[j]!='\0';j++)
+    {
+        y++;
+    }
+    for(i=y-1;i>=0;i--)
+    {
+        if(s[i]!=' ')
+        {
+            printf("%c",s[i]);
+        }
+        else
+        break;
+    }
+    return 0;
+}
