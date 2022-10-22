@@ -1,0 +1,56 @@
+#include<stdio.h>
+int main()
+{
+    int n,m;
+    scanf("%d%d",&n,&m);
+    int a[n][m],i,j;
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        scanf("%d",&a[i][j]);
+    }
+    int k=0,l[100],o=0,g=0,b[100];
+    for(i=0;i<n;i++)
+    {
+        k=0;
+        for(j=0;j<m;j++)
+        {
+            k+=a[i][j];
+        }
+        l[o++]=k;
+    }
+    int y=0;
+    for(i=0;i<m;i++)
+    {
+        g=0;
+        for(j=0;j<n;j++)
+        {
+            g+=a[j][i];
+        }
+        b[y++]=g;
+    }
+    int max1=l[0];
+    for(i=0;i<o;i++)
+    {
+        if(l[i]>max1)
+        {
+            max1=l[i];
+        }
+    }
+     int max2=b[0];
+    for(i=0;i<y;i++)
+    {
+        if(b[i]>max2)
+        {
+            max2=b[i];
+        }
+    }
+    if(max1<=max2)
+    {
+        printf("%d",max2);
+    }
+    else
+    {
+        printf("%d",max1);
+    }
+}
